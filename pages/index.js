@@ -52,7 +52,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <div className='row mb-5'>
-          <div className='col-6 mx-auto text-center'>
+          <div className='col-12 col-md-6 mx-auto text-center'>
             <h1>House Salary Calculator</h1>
             <p>
               The point of this calculator is to make sure you are looking at a safe maximum to pay monthly for a mortgage using the salary you are at or planning to have.
