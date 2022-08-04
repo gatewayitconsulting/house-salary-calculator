@@ -38,7 +38,6 @@ export default function Home() {
       monthlyIncome = taxDifference / months;
       mortgageLimit = monthlyIncome * mortgageFactor;
       document.getElementById('showCap').innerHTML = mortgageLimit;
-      console.log(mortgageLimit);
       event.preventDefault();
     }
   }
@@ -52,16 +51,29 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
+        <div className='row mb-5'>
+          <div className='col-6 mx-auto text-center'>
+            <h1>House Salary Calculator</h1>
+            <p>
+              The point of this calculator is to make sure you are looking at a safe maximum to pay monthly for a mortgage using the salary you are at or planning to have.
+            </p>
+            <p>
+              <em>
+                The calculator is taking taxes at a rate of roughly 1/3 your salary and factoring that into the results.
+              </em>
+            </p>
+          </div>
+        </div>
         <div className='row'>
           <form>
-            <label for="salary" className='col-12 text-center mb-3'>Salary:</label>
-            <input type="text" name="salary" id="salary" className='col-12 text-center' />
-            <button type="submit" onClick={calculateHousingSalaryCap} className='col-12'>
+            <label for="salary" className='col-12 text-center mb-3 form-label'>Salary:</label>
+            <input type="text" name="salary" id="salary" className='col-12 text-center form-control' />
+            <button type="submit" onClick={calculateHousingSalaryCap} className='col-12 btn btn-light mt-3'>
               Calculate
             </button>
           </form>
         </div>
-        <div className='row mt-2'>
+        <div className='row mt-5'>
           <div className='col-12'>
             <p className={styles.white}>
               <span id='money'>Monthly Payment Max after Tax: $</span>
